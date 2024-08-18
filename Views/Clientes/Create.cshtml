@@ -1,0 +1,88 @@
+﻿@model RSGymPT.ClientManagement.Models.Cliente
+
+<h2>Criar Cliente</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Nome" class="control-label"></label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TipoPagamento" class="control-label"></label>
+        <select asp-for="TipoPagamento" class="form-control" id="tipoPagamento">
+            <option value="Pontual">Pontual</option>
+            <option value="Mensal">Mensal</option>
+        </select>
+        <span asp-validation-for="TipoPagamento" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Fidelizado" class="control-label"></label>
+        <select asp-for="Fidelizado" class="form-control" id="fidelizado">
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+        </select>
+        <span asp-validation-for="Fidelizado" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MesesFidelizacao" class="control-label"></label>
+        <input asp-for="MesesFidelizacao" class="form-control" type="number" min="0" id="MesesFidelizacao" />
+        <span asp-validation-for="MesesFidelizacao" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ValorMensalidade" class="control-label"></label>
+        <input asp-for="ValorMensalidade" class="form-control" type="number" step="0.01" min="0" />
+        <span asp-validation-for="ValorMensalidade" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ServicosUtilizados" class="control-label"></label>
+        <input asp-for="ServicosUtilizados" class="form-control" id="servicosUtilizados" readonly />
+        <span asp-validation-for="ServicosUtilizados" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Criar" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    <script>
+        // Função para atualizar os campos com base no tipo de pagamento e fidelização
+        function updateFields() {
+            var tipoPagamento = document.getElementById("tipoPagamento").value;
+            var fidelizadoField = document.getElementById("fidelizado");
+            var mesesFidelizacaoField = document.getElementById("MesesFidelizacao");
+            var servicosUtilizados = document.getElementById("servicosUtilizados");
+
+            if (tipoPagamento === "Mensal") {
+                fidelizadoField.disabled = false; // Habilita o campo de fidelização para clientes mensais
+                
+                if (fidelizadoField.value === "true") {
+                    servicosUtilizados.value = 999; // Máximo de serviços
+                    mesesFidelizacaoField.disabled = false; // Habilita o campo de meses de fidelização
+                } else {
+                    servicosUtilizados.value = 2; // Apenas 2 serviços disponíveis
+                    mesesFidelizacaoField.value = 0; // Reseta o valor
+                    mesesFidelizacaoField.disabled = true; 
+                }
+            } else if (tipoPagamento === "Pontual") {
+                fidelizadoField.value = "false"; // Fidelização como falso
+                fidelizadoField.disabled = true; // Desabilita a fidelização
+                mesesFidelizacaoField.value = 0; // Reseta meses de fidelização
+                mesesFidelizacaoField.disabled = true; // Desabilita os meses de fidelização
+                servicosUtilizados.value = 1; // Apenas 1 serviço disponível
+            }
+        }
+
+        // Chamar a função quando a página carrega e quando os campos mudam
+        document.getElementById("tipoPagamento").addEventListener("change", updateFields);
+        document.getElementById("fidelizado").addEventListener("change", updateFields);
+        window.onload = updateFields;
+    </script>
+}
+

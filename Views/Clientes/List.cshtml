@@ -1,0 +1,44 @@
+﻿@model IEnumerable<RSGymPT.ClientManagement.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Gestão de Clientes";
+}
+
+<h1>Gestão de Clientes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Tipo de Pagamento</th>
+            <th>Fidelizado</th>
+            <th>Data de Inscrição</th>
+            <th>Valor Mensalidade</th>
+            <th>Serviços Utilizados</th>
+            <th>Meses de Fidelização</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">@item.Nome</a>
+                </td>
+                <td>@item.TipoPagamento</td>
+                <td>@item.Fidelizado</td>
+                <td>@item.DataInscricao.ToShortDateString()</td>
+                <td>@item.ValorMensalidade.ToString("C")</td>
+                <td>@item.ServicosUtilizados</td>
+                <td>@item.MesesFidelizacao</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <!-- Botão de eliminar que envia requisição POST para o controlador -->
+                    <form asp-action="Delete" asp-route-id="@item.Id" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
