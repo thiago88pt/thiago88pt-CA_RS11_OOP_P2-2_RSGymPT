@@ -1,0 +1,14 @@
+C:\Users\UTILIZADOR\source\repos\RSGymPT.UserAdministration\obj\Debug\RSGymPT.UserAdministration.csproj.AssemblyReference.cache
+C:\Users\UTILIZADOR\source\repos\RSGymPT.UserAdministration\obj\Debug\RSGymPT.UserAdministration.csproj.CoreCompileInputs.cache
+C:\Users\UTILIZADOR\source\repos\RSGymPT.UserAdministration\bin\Debug\RSGymPT.UserAdministration.exe.config
+C:\Users\UTILIZADOR\source\repos\RSGymPT.UserAdministration\bin\Debug\RSGymPT.UserAdministration.exe
+C:\Users\UTILIZADOR\source\repos\RSGymPT.UserAdministration\bin\Debug\RSGymPT.UserAdministration.pdb
+C:\Users\UTILIZADOR\source\repos\RSGymPT.UserAdministration\obj\Debug\RSGymPT.UserAdministration.exe
+C:\Users\UTILIZADOR\source\repos\RSGymPT.UserAdministration\obj\Debug\RSGymPT.UserAdministration.pdb
+C:\Users\UTILIZADOR\Desktop\OLX - C#\dev\RSGymPT.UserAdministration\bin\Debug\RSGymPT.UserAdministration.exe.config
+C:\Users\UTILIZADOR\Desktop\OLX - C#\dev\RSGymPT.UserAdministration\bin\Debug\RSGymPT.UserAdministration.exe
+C:\Users\UTILIZADOR\Desktop\OLX - C#\dev\RSGymPT.UserAdministration\bin\Debug\RSGymPT.UserAdministration.pdb
+C:\Users\UTILIZADOR\Desktop\OLX - C#\dev\RSGymPT.UserAdministration\obj\Debug\RSGymPT.UserAdministration.csproj.AssemblyReference.cache
+C:\Users\UTILIZADOR\Desktop\OLX - C#\dev\RSGymPT.UserAdministration\obj\Debug\RSGymPT.UserAdministration.csproj.CoreCompileInputs.cache
+C:\Users\UTILIZADOR\Desktop\OLX - C#\dev\RSGymPT.UserAdministration\obj\Debug\RSGymPT.UserAdministration.exe
+C:\Users\UTILIZADOR\Desktop\OLX - C#\dev\RSGymPT.UserAdministration\obj\Debug\RSGymPT.UserAdministration.pdb
