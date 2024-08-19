@@ -12,11 +12,14 @@ namespace RSGymPT.ClientManagement.Controllers
     {
         private readonly RSGymPTContext _context;
 
+        #region Constructor
         public ClientesController(RSGymPTContext context)
         {
             _context = context;
         }
+        #endregion
 
+        #region ActionMethods
         public async Task<IActionResult> Index()
         {
             return View(await _context.Clientes.ToListAsync());
@@ -32,6 +35,7 @@ namespace RSGymPT.ClientManagement.Controllers
             var clientes = await _context.Clientes.ToListAsync();
             return View(clientes);
         }
+        #endregion
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -174,10 +178,13 @@ namespace RSGymPT.ClientManagement.Controllers
         }
         #endregion
 
-
+        #region ClienteExists
         private bool ClienteExists(int id)
         {
             return _context.Clientes.Any(e => e.Id == id);
         }
+        #endregion
+
+
     }
 }

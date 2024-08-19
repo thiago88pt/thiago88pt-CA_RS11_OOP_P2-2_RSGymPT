@@ -8,11 +8,14 @@ namespace RSGymPT.ClientManagement.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        #region Constructor
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
+        #endregion
 
+        #region ActionMethods
         public IActionResult Index()
         {
             return View();
@@ -28,5 +31,7 @@ namespace RSGymPT.ClientManagement.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        #endregion
+
     }
 }
